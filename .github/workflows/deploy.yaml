@@ -2,7 +2,7 @@ name: Deploy Frontend
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -19,9 +19,9 @@ jobs:
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v18
         with:
-          application_name: docker-gh
-          environment_name: Dockergh-env
-          existing_bucket_name: elasticbeanstalk-us-east-1-923445559289
+          application_name: frontend react
+          environment_name: Frontendreact-env
+          existing_bucket_name: elasticbeanstalk-us-east-1-329331398453
           region: us-east-1
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
